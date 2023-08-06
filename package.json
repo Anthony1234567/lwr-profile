@@ -5,7 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "clean": "rm -rf node_modules __lwr_cache__ site",
+    "clean": "rm -rf node_modules __lwr_cache__ site src/assets/icons/ src/assets/images src/assets/styles",
     "dev": "lwr dev",
     "build": "lwr build --clean",
     "start": "lwr start",
