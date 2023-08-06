@@ -1,0 +1,54 @@
+{
+    "lwc": { 
+        "modules": [
+            { "dir": "$rootDir/src/modules" },
+            { "npm": "lightning-base-components" }
+        ] 
+    },
+    "routes": [
+        {
+            "id": "Home",
+            "path": "/",
+            "contentTemplate": "$contentDir/home.html",
+            "layoutTemplate": "$layoutsDir/main_layout.njk",
+            "bootstrap": {
+                "syntheticShadow": true
+            }
+        },
+        {
+            "id": "About",
+            "path": "/about",
+            "contentTemplate": "$contentDir/about.html",
+            "layoutTemplate": "$layoutsDir/main_layout.njk",
+            "bootstrap": {
+                "syntheticShadow": true
+            }
+        }
+    ],
+    "assets": [
+        {
+            "alias": "assetsDir",
+            "dir": "$rootDir/src/assets",
+            "urlPath": "/public/assets"
+        },
+        {
+            "dir": "$rootDir/src/assets/fonts",
+            "urlPath": "/fonts"
+        },
+        {
+            "file": "$rootDir/src/assets/utilitySprite.svg",
+            "urlPath": "/lightning.utilitySprite"
+        },
+        {
+            "alias": "favicon",
+            "file": "$rootDir/src/assets/favicon.ico",
+            "urlPath": "/favicon.ico"
+        }
+    ],
+    "moduleProviders": [
+        "@lwrjs/label-module-provider",
+        "@lwrjs/app-service/moduleProvider",
+        "@lwrjs/lwc-module-provider",
+        "@lwrjs/npm-module-provider"
+    ]
+}

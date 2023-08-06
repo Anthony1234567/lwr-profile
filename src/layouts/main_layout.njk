@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+		<title>{{ global.siteTitle }} | {{ page.title }}</title>
+        <link rel="stylesheet" href="$assetsDir/styles/salesforce-lightning-design-system.css" />
+        <link rel="stylesheet" href="$assetsDir/css/main.css" />
+	</head>
+	<body>
+        <header class="slds-global-header_container">
+            <a href="#" class="slds-assistive-text slds-assistive-text_focus">Skip to Navigation</a>
+            <a href="#" class="slds-assistive-text slds-assistive-text_focus">Skip to Main Content</a>
+            <div class="slds-global-header slds-grid slds-grid_align-spread">
+                <div class="slds-global-header__item">
+                    <div class="slds-global-header__logo">
+                        <span class="slds-assistive-text">Salesforce</span>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-context-bar">
+                <div class="slds-context-bar__primary">
+                    <div class="slds-context-bar__item slds-no-hover">
+                        <span class="slds-context-bar__label-action slds-context-bar__app-name">
+                            <span class="slds-truncate" title={{ global.siteTitle }}>{{ global.siteTitle }}</span>
+                        </span>
+                    </div>
+                </div>
+                <nav class="slds-context-bar__secondary" role="navigation">
+                    <ul class="slds-grid">
+                        {% for navigationItem in global.navigationItems %}
+                            <li class="slds-context-bar__item {{ 'slds-context-bar__item slds-is-active' if navigationItem.name == page.title }}">
+                                <a href={{ navigationItem.href }} class="slds-context-bar__label-action" title={{ navigationItem.label }}>
+                                    <span class="slds-assistive-text">Current Page:</span>
+                                    <span class="slds-truncate" title={{ navigationItem.label }}>{{ navigationItem.label }}</span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="slds-var-m-around_medium">
+            {{ body | safe }} {{ lwr_resources | safe }}
+        </main>
+	</body>
+</html>

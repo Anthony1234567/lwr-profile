@@ -1,0 +1,15 @@
+{
+    "siteTitle": "LWR Professional Profile",
+    "navigationItems": [
+        {
+            "name": "home",
+            "label": "Home",
+            "href": "/"
+        },
+        {
+            "name": "about",
+            "label": "About",
+            "href": "/about"
+        }
+    ]
+}
